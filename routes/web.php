@@ -24,3 +24,11 @@ $router->group(['prefix' => 'api/dosen'], function () use ($router) {
     $router->put('{no}', 'DosenController@update');     // Update
     $router->delete('{no}', 'DosenController@destroy'); // Delete
 });
+
+$router->group(['prefix' => 'api/rs'], function () use ($router) {
+    $router->get('/', 'RsController@index');         // Get all
+    $router->get('{id}', 'RsController@show');       // Get by ID
+    $router->post('/', 'RsController@store');        // Create
+    $router->put('{id}', 'RsController@update');     // Update
+    $router->delete('{id}', 'RsController@destroy'); // Delete
+});
